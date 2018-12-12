@@ -2,17 +2,155 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>About Me</title>
+<title>index.html</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/slicknav.css">
+	
 </head>
 
 <body>
-	<h1>About Me</h1>
-<div>
-	<img src="file:///C|/Users/Sam/Desktop/friendsgiving 2017.jpg" align="right" width="30%"/>
-	<p>Thank you for stopping at Sammy Kay Art, I am so glad you came by. I am Sammy Kay, I am a Junior in the Graphic Design program at Grand View Univeristy. I love creating logos, posters, and more. Below you can see some samples of my work. Please take a look around at my art.</p>
-	<h4>My Ideal Day:</h4>
-	<p>My Ideal day would be sitting outside on a warm 75 degree day, painting a bright and colorful dog. Ideally I would like to incorporate my dog painting into a graphic design piece like I did for the Smiling Dog Logo as shown below.</p>
+	<header>
+		
+
+		<img src="images/Logo.png" alt="Sammy Kay Art Logo">
+		
+		<ul id="menu">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		
+	</header>	
+	<main>
+		<div class="slideshow-container">
+
+		<div class="mySlides">
+ 			 <div class="numbertext">1 / 3</div>
+ 			 <img src="images/Hater765.jpg" style="width:100%">
+ 		 </div>
+
+		<div class="mySlides">
+ 			 <div class="numbertext">2 / 3</div>
+ 			 <img src="images/PM765.jpg" style="width:100%">
+
+		</div>
+
+		<div class="mySlides">
+  			<div class="numbertext">3 / 3</div>
+  			<img src="images/Helvetica765.jpg" style="width:100%">
+
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+ 		 <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
 	</div>
-	<h2>Examples of my work:</h2>
+	<br>
+
+		<div style="text-align:center">
+ 			 <span class="dot dotsm" onclick="currentSlide(1)"></span> 
+ 			 <span class="dot dotsm" onclick="currentSlide(2)"></span> 
+ 			 <span class="dot dotsm" onclick="currentSlide(3)"></span> 
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+			<div class="hero herosm">
+				<div id="about">
+				<h1>Welcome</h1>
+					<p>Thank you for stopping at Sammy Kay Art. I am Sammy Kay a Junior in the Graphic Design program at Grand View Univeristy. I love creating logos, posters, and more. Below you can see some samples of my work. Please take a look around.</p>
+					<br>
+					<h2>My Ideal Day:</h2>
+					<p>My Ideal day would be sitting outside on a warm sun beats down on me, painting a bright and colorful dog. Then incorporating my dog painting into a graphic design piece like I did for the Smiling Dog Logo as shown below. What's your ideal day?</p>
+				</div></div></div></div>
+
+			<div class="hero herosm"><img src="images/me.jpg" alt="Sammy Kay"></div>
+			
+		
+		
+			<div class="row">
+			<div class="portfolio">
+				<div id="portfolio">
+			<div class="col col-lg col-md col-sm"><img src="images/breck-thumbnail.jpg" alt="Magical Photoshop"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Fuddy-Meers-thumbnail.jpg" alt="Fuddy Meers Poster"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Haters-thumbnail.jpg" alt="Record Album"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Genevieve-Burch-thumbnail.jpg" alt="Business Cards"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Christmas-Invites-Thumbnail-01.jpg" alt="Christmas Invitation"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Epic-Moments-Logo-Thumbnail-01.jpg" alt="Epic Moments Logo"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Smiling-Dog-Logo-Thumbnail-01.jpg" alt="Smiling Dog Logo"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/JS-Business-Card-Logo-Thumbnail-01.jpg" alt="Photography Buisness Cards"></div>
+			<div class="col col-lg col-md col-sm"><img src="images/Auditions-Thumbnail-01.jpg" alt="Snoopy Auditions Poster"></div></div></div>
+		</div>
+		
+		<div class="container">
+  <form action="action_page.php">
+<div id="contact">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+	  <option value="usa">USA</option>
+      <option value="canada">Canada</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Say Hello.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+	
+</div>
+
+	</main>
+	
+	
+	
+	<footer></footer>
+	
+	
+	
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.slicknav.js"></script>
+	<script>
+		$(function(){
+			$('#menu').slicknav();
+		});
+	</script>
+
+	<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </body>
 </html>
